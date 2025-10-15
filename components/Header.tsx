@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ThemeToggle } from './ThemeToggle';
 
@@ -20,7 +19,17 @@ export const Header: React.FC<HeaderProps> = ({ theme, onToggleTheme }) => {
               Formaciones
             </h1>
           </div>
-          <ThemeToggle theme={theme} onToggle={onToggleTheme} />
+          <div className="flex items-center space-x-4">
+            <a
+              href="https://astralabs.inte.ar/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-1.5 text-sm font-semibold text-vibrant-blue bg-white/80 dark:bg-deep-blue/80 border border-vibrant-blue/30 rounded-full hover:bg-vibrant-blue/10 dark:hover:bg-vibrant-blue/20 transition-colors duration-300 hidden sm:inline-block"
+            >
+              Volver a inicio
+            </a>
+            <ThemeToggle theme={theme} onToggle={onToggleTheme} />
+          </div>
         </div>
       </div>
     </header>
