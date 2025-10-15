@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface ThemeToggleProps {
@@ -10,6 +9,7 @@ export const ThemeToggle: React.FC<ThemeToggleProps> = ({ theme, onToggle }) => 
   return (
     <button
       onClick={onToggle}
+      aria-label={theme === 'light' ? 'Activar modo oscuro' : 'Activar modo claro'}
       className="relative inline-flex items-center h-8 w-14 rounded-full bg-warm-gray-light dark:bg-petrol-dark transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-vibrant-blue focus:ring-offset-2 dark:focus:ring-offset-petrol-dark"
     >
       <span

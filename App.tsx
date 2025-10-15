@@ -3,6 +3,7 @@ import { Header } from './components/Header';
 import { CourseGrid } from './components/CourseGrid';
 import { CourseModal } from './components/CourseModal';
 import { Footer } from './components/Footer';
+import { ScrollToTopButton } from './components/ScrollToTopButton';
 import type { Course } from './types';
 import { COURSES } from './constants';
 
@@ -12,6 +13,7 @@ const App: React.FC = () => {
   const [theme, setTheme] = useState<Theme>('light');
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [sessionViewedCourses, setSessionViewedCourses] = useState<Set<number>>(new Set());
+  const [showScrollTop, setShowScrollTop] = useState<boolean>(false);
 
   useEffect(() => {
     const root = window.document.documentElement;
@@ -21,6 +23,20 @@ const App: React.FC = () => {
       root.classList.remove('dark');
     }
   }, [theme]);
+  
+  useEffect(() => {
+    const checkScrollTop = () => {
+      // Show button if we're more than 400px down
+      if (!showScrollTop && window.pageYOffset > 400) {
+        setShowScrollTop(true);
+      } else if (showScrollTop && window.pageYOffset <= 400) {
+        setShowScrollTop(false);
+      }
+    };
+
+    window.addEventListener('scroll', checkScrollTop);
+    return () => window.removeEventListener('scroll', checkScrollTop);
+  }, [showScrollTop]);
 
   const handleToggleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
@@ -46,6 +62,10 @@ const App: React.FC = () => {
     document.body.style.overflow = 'auto';
   };
 
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="bg-smoke-white dark:bg-petrol-dark min-h-screen font-sans text-deep-blue dark:text-smoke-white transition-colors duration-500">
       <Header theme={theme} onToggleTheme={handleToggleTheme} />
@@ -59,6 +79,7 @@ const App: React.FC = () => {
         onSelectCourse={handleSelectCourse}
         sessionViewedCourses={sessionViewedCourses}
       />
+      <ScrollToTopButton isVisible={showScrollTop} onScroll={handleScrollToTop} />
     </div>
   );
 };

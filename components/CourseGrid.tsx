@@ -42,6 +42,7 @@ export const CourseGrid: React.FC<CourseGridProps> = ({ courses, onSelectCourse 
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full pl-12 pr-4 py-3 bg-white dark:bg-deep-blue border-2 border-warm-gray-light dark:border-petrol-dark rounded-full focus:outline-none focus:ring-2 focus:ring-vibrant-blue transition-all duration-300"
+            aria-label="Buscar un curso por título o descripción"
           />
           <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
             <SearchIcon />

@@ -1,4 +1,3 @@
-
 import type { ReactNode } from 'react';
 
 export interface CourseContentBlock {
@@ -13,6 +12,7 @@ export interface Course {
   icon: ReactNode;
   title: string;
   preview: string;
+  tags: string[];
   content: {
     whatIsIt: CourseContentBlock;
     whatFor: CourseContentBlock;

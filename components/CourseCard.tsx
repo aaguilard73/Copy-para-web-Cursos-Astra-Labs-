@@ -15,9 +15,16 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course, onSelectCourse }
         <div className="text-vibrant-blue mb-4">
           {course.icon}
         </div>
-        <h3 className="text-xl font-bold mb-2">
+        <h3 className="text-xl font-bold mb-3">
           <Highlight text={course.title} keywords={KEYWORDS} />
         </h3>
+        <div className="flex flex-wrap gap-2 mb-4">
+          {course.tags.map(tag => (
+            <span key={tag} className="text-xs font-semibold px-2 py-1 bg-vibrant-blue/10 dark:bg-vibrant-blue/20 text-vibrant-blue dark:text-smoke-white/80 rounded-full">
+              {tag}
+            </span>
+          ))}
+        </div>
         <p className="text-gray-600 dark:text-gray-300 text-sm flex-grow">
           <Highlight text={course.preview} keywords={KEYWORDS} />
         </p>
