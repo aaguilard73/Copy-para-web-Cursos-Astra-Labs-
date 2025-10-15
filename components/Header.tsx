@@ -34,7 +34,7 @@ export const Header: React.FC<HeaderProps> = ({ theme, onToggleTheme }) => {
               rel="noopener noreferrer"
               className="px-4 py-1.5 text-sm font-semibold text-vibrant-blue bg-white/80 dark:bg-deep-blue/80 border border-vibrant-blue/30 rounded-full hover:bg-vibrant-blue/10 dark:hover:bg-vibrant-blue/20 transition-colors duration-300 hidden sm:inline-block"
             >
-              Volver a inicio
+              Volver al inicio
             </a>
             <ThemeToggle theme={theme} onToggle={onToggleTheme} />
           </div>
