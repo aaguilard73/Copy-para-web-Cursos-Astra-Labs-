@@ -19,7 +19,15 @@ export const Header: React.FC<HeaderProps> = ({ theme, onToggleTheme }) => {
               Formaciones
             </h1>
           </div>
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 sm:space-x-4">
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfCYNbQU188LOaSia0QV7j0Cpj--JMvkyA9TS4vF0lAbIQMlg/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-1.5 text-sm font-semibold text-white bg-vibrant-blue rounded-full hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 shadow-md"
+            >
+              Solicita Información
+            </a>
             <a
               href="https://astralabs.inte.ar/"
               target="_blank"

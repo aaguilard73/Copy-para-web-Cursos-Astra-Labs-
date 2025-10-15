@@ -108,9 +108,14 @@ export const Footer: React.FC = () => {
                 <Highlight text="Contacta con nosotros para obtener más información sobre nuestros cursos o para agendar una reunión y discutir tus necesidades." keywords={KEYWORDS} />
             </p>
             <div className="flex justify-center items-center">
-                <button className="px-8 py-3 bg-vibrant-blue text-white font-semibold rounded-full hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                <a 
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSfCYNbQU188LOaSia0QV7j0Cpj--JMvkyA9TS4vF0lAbIQMlg/viewform"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-8 py-3 bg-vibrant-blue text-white font-semibold rounded-full hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                >
                     Quiero más información
-                </button>
+                </a>
             </div>
         </div>
 
@@ -122,9 +127,14 @@ export const Footer: React.FC = () => {
             <div className="min-h-[150px] sm:min-h-[120px] flex items-center justify-center max-w-3xl mx-auto">
                 <TypingEffect phrases={customTrainingPhrases} />
             </div>
-            <button className="mt-4 px-8 py-3 bg-transparent border-2 border-vibrant-blue text-vibrant-blue font-semibold rounded-full hover:bg-vibrant-blue hover:text-white transition-all duration-300 transform hover:scale-105">
+            <a 
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfCYNbQU188LOaSia0QV7j0Cpj--JMvkyA9TS4vF0lAbIQMlg/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-block px-8 py-3 bg-transparent border-2 border-vibrant-blue text-vibrant-blue font-semibold rounded-full hover:bg-vibrant-blue hover:text-white transition-all duration-300 transform hover:scale-105"
+            >
                 Contactar para un plan a medida
-            </button>
+            </a>
           </div>
         </div>
       </div>
